@@ -1,36 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('form');
-  const usernameInput = document.getElementById('username');
-  const titleInput = document.getElementById('title');
-  const contentInput = document.getElementById('content');
-  const errorElement = document.getElementById('error');
+  const postList = document.getElementById('post-list');
+  const toggleButton = document.getElementById('toggle');
 
-  form.addEventListener('submit', (e) => {
-      e.preventDefault();
+  // Retrieve posts from localStorage
+  const posts = JSON.parse(localStorage.getItem('posts')) || [];
 
-      const username = usernameInput.value.trim();
-      const title = titleInput.value.trim();
-      const content = contentInput.value.trim();
+  // Display posts
+  posts.forEach(post => {
+      const postItem = document.createElement('div');
+      postItem.classList.add('post-item');
+      postItem.innerHTML = `<h3>${post.title}</h3>
+                            <p><strong>By: ${post.username}</strong></p>
+                            <p>${post.content}</p>`;
+      postList.appendChild(postItem);
+  });
 
-      // Validation
-      if (!username || !title || !content) {
-          errorElement.textContent = 'Please fill in all fields.';
-          return;
-      }
-
-      // Create blog post object
-      const post = {
-          username,
-          title,
-          content,
-      };
-
-      // Save to localStorage
-      const posts = JSON.parse(localStorage.getItem('posts')) || [];
-      posts.push(post);
-      localStorage.setItem('posts', JSON.stringify(posts));
-
-      // Redirect to posts page
-      window.location.href = 'blog.html';
+  // Light/Dark mode toggle functionality
+  toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleButton.innerHTML = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
   });
 });

@@ -3,39 +3,14 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f7f9fc; /* Light background */
   color: #333; /* Dark text */
-  margin: 0;
-  padding: 0;
 }
 
 header {
-  background-color: #b2e0e0; /* Pastel color for header */
   padding: 1em;
-  text-align: center;
 }
 
 button {
   margin-top: 1em;
-}
-
-form {
-  background-color: #e8f8f5; /* Pastel teal for form */
-  padding: 1em;
-  border-radius: 8px;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 0.5em;
-  margin: 0.5em 0;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-input[type="submit"] {
-  background-color: #b2e0e0; /* Pastel submit button */
-  border: none;
-  color: white;
-  cursor: pointer;
 }
 
 /* Dark mode styles */
@@ -48,6 +23,10 @@ header {
   background-color: #34495e; /* Darker header */
 }
 
-form {
-  background-color: #1abc9c; /* Pastel teal for dark mode */
+/* Optional adjustments for blog posts */
+.post-item {
+  background-color: #e8f8f5; /* Pastel teal for blog post */
+  padding: 1em;
+  border-radius: 8px;
+  margin-bottom: 1em;
 }
