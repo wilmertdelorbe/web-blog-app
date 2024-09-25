@@ -1,0 +1,133 @@
+/*
+  Global Resets
+*/
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  line-height: 1.5; /* Adjusted for better readability */
+  font-family: 'Arial', sans-serif; /* Changed to a more standard sans-serif */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+
+input,
+select,
+option,
+optgroup,
+textarea,
+button,
+pre,
+code {
+  font-size: 100%;
+  font-family: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+/*
+  General Styles
+*/
+/*
+  Root Variables
+*/
+:root {
+  --primary-light: #ffffff;
+  --primary-light-accent: #f9f9fb;
+  --primary-dark: #000000;
+  --primary-dark-accent: #222222;
+  --primary-dark-action: #111111;
+  --primary-action: #563d7c; /* Main action color */
+  --primary-action-accent: #8570a5; /* Accent for action color */
+  --disabled-color: #aaaaaa;
+  --error-color: #ff0022;
+  --highlight-color: #ffb100; /* Highlight color for circles */
+}
+
+* {
+  transition: background-color 0.5s ease-in; /* Smooth transition for background color */
+}
+
+/*
+  Header and Footer Styles
+*/
+header {
+  display: flex;
+  flex-wrap: wrap; /* More flexible wrapping */
+  justify-content: space-between;
+  padding: 2rem; /* Unified padding for header */
+}
+
+footer {
+  padding: 2rem; /* Unified padding for footer */
+}
+
+main {
+  height: calc(100vh - 6rem);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  border-top: double 1rem; /* Decorative top border */
+}
+
+/*
+  Dark Mode Styles
+*/
+.dark header,
+.dark footer {
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
+}
+
+.dark main {
+  background-color: var(--primary-dark-accent);
+  color: var(--primary-light);
+  border-top: solid 0.5rem var(--disabled-color); /* Subtle border in dark mode */
+}
+
+/*
+  Light Mode Styles
+*/
+.light header,
+.light footer {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.light main {
+  background-color: var(--primary-light-accent);
+  color: var(--primary-dark);
+}
+
+/*
+  Toggle Button Styles
+*/
+#toggle {
+  font-size: 1.5em; /* Consistent font size */
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer; /* Pointer cursor for button */
+  text-shadow: 0px 0px 0.5rem var(--primary-light-accent); /* Subtle text shadow */
+}

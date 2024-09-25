@@ -1,0 +1,117 @@
+/*
+  Custom Form Styles
+*/
+
+/*
+  General Link Styles
+*/
+a {
+  text-decoration: none;
+  transition: color 0.3s ease-in-out; /* Smooth transition for color changes */
+}
+
+/*
+  Form Article Styles
+*/
+form article {
+  display: flex;
+  flex-direction: column; /* Column layout for form fields */
+  border: 2px solid #ddd; /* Softer border color for better visibility */
+  border-radius: 8px; /* More pronounced border radius */
+  padding: 2rem; /* Increased padding for form spacing */
+  background-color: #ffffff; /* White background for forms */
+}
+
+form article blockquote {
+  margin: 2rem 0; /* Vertical margin for quotes */
+  font-style: italic;
+  border-left: 4px solid #444; /* Darker border for emphasis */
+  padding-left: 1rem; /* Added padding for quotes */
+}
+
+form article h2 {
+  text-transform: capitalize;
+  border-bottom: 2px solid #555; /* Clearer border for headers */
+  padding-bottom: 0.5rem; /* Spacing below header */
+}
+
+form article p {
+  margin: 0; /* Reset margin for paragraph inside article */
+  color: #666; /* Grey color for text */
+}
+
+footer {
+  position: fixed;
+  inset: 0;
+  top: calc(100% - 16rem); /* Footer position adjustment */
+  background-color: #f0f0f0; /* Light background for footer */
+  border-top: 2px solid #ccc; /* More visible top border */
+}
+
+li {
+  margin: 1.2rem 0; /* Spacing for list items */
+}
+
+main {
+  display: flex; /* Flexbox for layout */
+  flex-direction: column;
+  gap: 1.5em; /* Increased gap for better separation */
+  padding: 1.5rem; /* Padding for main content */
+  height: calc(100vh - 22rem); /* Adjusted height */
+  overflow-y: auto; /* Scrollable overflow */
+}
+
+ul {
+  list-style-type: square; /* Change list style to square */
+  padding-left: 2rem; /* Increased padding for lists */
+}
+
+/*
+  Specific Classes
+*/
+.card {
+  flex: 1 1 40%; /* Changed flex basis for cards */
+  border: 2px solid #bbb; /* Lighter border for cards */
+  border-radius: 10px; /* More rounded corners */
+  background-color: #fff; /* Card background */
+}
+
+.dark a {
+  color: #e0e0e0; /* Lighter text for dark mode */
+}
+
+.light footer {
+  border-top: 3px dashed #999; /* Dashed border for light mode footer */
+}
+
+.light a {
+  color: #222; /* Darker text for light mode */
+}
+
+/*
+  Unique ID Styles
+*/
+#back {
+  padding: 0.7rem 1.5rem; /* Increased padding for back button */
+  border-radius: 8px; /* More rounded edges */
+  margin-right: 1rem;
+  border: 2px solid #222; /* Defined border for back button */
+  background-color: #555; /* Darker background for button */
+  color: #ffffff; /* Light text for button */
+}
+
+#back:active {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  background-color: #666; /* Darker background on active */
+}
+
+#back:hover {
+  border-style: dotted; /* Dotted border on hover */
+  background-color: #777; /* Lighter background on hover */
+}
+
+#love {
+  text-align: center;
+  font-size: 1.4rem; /* Slightly larger font for emphasis */
+  color: #ff4081; /* Pinkish color for love */
+}

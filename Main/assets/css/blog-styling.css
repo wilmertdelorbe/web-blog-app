@@ -1,0 +1,117 @@
+/*
+  Personal Blog Styles
+*/
+
+/*
+  General Links
+*/
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+article {
+  flex: 1 1 50%;
+  border: 2px solid #ccc; /* Lighter border color for distinction */
+  border-radius: 6px;
+  padding: 1.5rem; /* Increased padding for better spacing */
+  position: relative;
+  background-color: #f9f9f9; /* Light background for articles */
+}
+
+article blockquote {
+  margin: 1.5rem;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+  border-left: 4px solid #666; /* Distinctive border for blockquotes */
+  padding-left: 1rem; /* Added padding for quotes */
+}
+
+article h2 {
+  text-transform: capitalize;
+  border-bottom: 2px solid #888; /* Thicker border for headers */
+  padding-bottom: 0.5rem; /* Padding for spacing */
+}
+
+article p {
+  position: absolute;
+  left: 1rem;
+  bottom: 0.5rem;
+  opacity: 0.8; /* Slightly higher opacity for better readability */
+}
+
+footer {
+  position: fixed;
+  inset: 0;
+  top: calc(100% - 14rem); /* Adjusted footer position */
+  background-color: #fff; /* Background color for footer */
+  border-top: 1px solid #ddd; /* Subtle top border */
+}
+
+li {
+  margin: 1rem 0; /* Vertical margin for list items */
+}
+
+main {
+  display: flex; /* Ensure flexbox is set */
+  flex-direction: column;
+  gap: 1em;
+  padding: 1rem;
+  height: calc(100vh - 20rem); /* Increased height for main area */
+  overflow-y: auto; /* Change to auto for better scrolling */
+  justify-content: flex-start;
+}
+
+ul {
+  list-style-type: disc; /* Changed list style */
+  padding-left: 1.5rem; /* Padding for list items */
+}
+
+/*
+  CSS Classes
+*/
+.card {
+  flex: 1 1 50%;
+  border: 2px solid #aaa; /* Distinct border for cards */
+  border-radius: 8px; /* More rounded corners */
+  background-color: #fff; /* White background for cards */
+}
+
+.dark a {
+  color: #e0e0e0; /* Light text for dark mode */
+}
+
+.light footer {
+  border-top: 3px double #aaa; /* Thicker border for light mode footer */
+}
+
+.light a {
+  color: #333; /* Dark text for light mode */
+}
+
+/*
+  CSS IDs
+*/
+#back {
+  padding: 0.6rem 1.2rem; /* Increased padding */
+  border-radius: 6px;
+  margin-right: 1rem;
+  border: 2px solid #000; /* More defined border */
+  background-color: #444; /* Darker accent color */
+  color: #fff; /* Light text color */
+}
+
+#back:active {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  background-color: #555; /* Darker background on active */
+}
+
+#back:hover {
+  border-style: dashed; /* Change border style on hover */
+  background-color: #666; /* Lighter background on hover */
+}
+
+#love {
+  text-align: center;
+  font-size: 1.2rem; /* Slightly larger font for emphasis */
+}
