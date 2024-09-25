@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Wilmert's First Blog</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Wilmert's First Blog</title>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="./assets/css/styles.css" />
-  <link rel="stylesheet" href="./assets/css/form.css" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/form.css" />
 
-  <!-- Scripts -->
-  <script defer src="./assets/js/logic.js" type="text/javascript"></script>
-  <script defer src="./assets/js/form.js" type="text/javascript"></script>
+    <!-- Scripts -->
+    <script defer src="./assets/js/logic.js" type="text/javascript"></script>
+    <script defer src="./assets/js/form.js" type="text/javascript"></script>
 </head>
 
 <body>
-  <header>
-    <h1>Welcome to Wilmert's Blog</h1>
-    <button id="toggle">☀️</button> <!-- Theme toggle button -->
-  </header>
+    <header>
+        <h1>&nbsp;</h1>
+        <button id="toggle">🌙</button> <!-- Toggle button for dark mode -->
+    </header>
 
-  <main>
-    <aside>
-      <h2>Wilmert's First Blog</h2>
-      <p>Join me as I share my thoughts on web development, biking, gaming, and more!</p>
-    </aside>
+    <main>
+        <aside>
+            <h2>Wilmert's First Blog</h2>
+        </aside>
 
-    <section>
-      <h2>Share Your Thoughts</h2>
-      <form id="postForm">
-        <label for="username">Username</label>
-        <input id="username" type="text" placeholder="Enter your username" required />
+        <section>
+            <h2>Share Your Thoughts</h2>
+            <form>
+                <label for="username">Username</label>
+                <input id="username" type="text" placeholder="Enter your username" required />
 
-        <label for="title">Title</label>
-        <input id="title" type="text" placeholder="Enter a title" required />
+                <label for="title">Title</label>
+                <input id="title" type="text" placeholder="Enter a title" required />
 
-        <label for="content">Content</label>
-        <textarea id="content" placeholder="What's on your mind?" rows="4" required></textarea>
-        
-        <p id="error">&nbsp;</p> <!-- Placeholder for error messages -->
-        
-        <input type="submit" value="Post" />
-      </form>
-    </section>
-  </main>
+                <label for="content">Content</label>
+                <textarea id="content" placeholder="What's on your mind?" rows="4" required></textarea>
+
+                <p id="error">&nbsp;</p>
+                
+                <input type="submit" value="Post" />
+            </form>
+        </section>
+    </main>
 </body>
 </html>

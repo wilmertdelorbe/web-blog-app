@@ -1,55 +1,36 @@
-const toggleButton = document.querySelector('#toggle');
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('form');
+  const usernameInput = document.getElementById('username');
+  const titleInput = document.getElementById('title');
+  const contentInput = document.getElementById('content');
+  const errorElement = document.getElementById('error');
 
-const switchTheme = function (theme) {
-  let iconSymbol, highlightColor;
+  form.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-  if (theme === 'light') {
-    iconSymbol = '☀️';
-    highlightColor = '#ffb100';
-  } else {
-    iconSymbol = '🌒';
-    highlightColor = '#8570a5';
-  }
+      const username = usernameInput.value.trim();
+      const title = titleInput.value.trim();
+      const content = contentInput.value.trim();
 
-  toggleButton.textContent = iconSymbol;
+      // Validation
+      if (!username || !title || !content) {
+          errorElement.textContent = 'Please fill in all fields.';
+          return;
+      }
 
-  document.body.className = theme;
+      // Create blog post object
+      const post = {
+          username,
+          title,
+          content,
+      };
 
-  document.documentElement.style.setProperty('--circle-color', highlightColor);
-};
+      // Save to localStorage
+      const posts = JSON.parse(localStorage.getItem('posts')) || [];
+      posts.push(post);
+      localStorage.setItem('posts', JSON.stringify(posts));
 
-const toggleThemeMode = function () {
-  const currentTheme = getCurrentTheme();
-
-  let newTheme;
-
-  if (currentTheme === 'light') {
-    newTheme = 'dark';
-  } else {
-    newTheme = 'light';
-  }
-
-  switchTheme(newTheme);
-  saveThemePreference(newTheme);
-};
-
-const retrieveBlogsFromStorage = function () {
-  const storedBlogs = localStorage.getItem('blogs');
-  const blogsArray = JSON.parse(storedBlogs);
-
-  return blogsArray || [];
-};
-
-const getCurrentTheme = function () {
-  const savedTheme = localStorage.getItem('mode') || 'dark';
-
-  return savedTheme;
-};
-
-const saveThemePreference = function (theme) {
-  localStorage.setItem('mode', theme);
-};
-
-switchTheme(getCurrentTheme());
-
-toggleButton.addEventListener('click', toggleThemeMode);
+      // Redirect to posts page
+      window.location.href = 'blog.html';
+  });
+});

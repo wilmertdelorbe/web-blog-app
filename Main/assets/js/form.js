@@ -1,45 +1,36 @@
-const blogForm = document.querySelector('form');
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('form');
+  const usernameInput = document.getElementById('username');
+  const titleInput = document.getElementById('title');
+  const contentInput = document.getElementById('content');
+  const errorElement = document.getElementById('error');
 
-const processFormSubmission = function (event) {
-  event.preventDefault();
+  form.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-  const userNameInput = document.querySelector('#username').value.trim();
-  const blogTitleInput = document.querySelector('#title').value.trim();
-  const blogContentInput = document.querySelector('#content').value.trim();
+      const username = usernameInput.value.trim();
+      const title = titleInput.value.trim();
+      const content = contentInput.value.trim();
 
-  if (!userNameInput || !blogTitleInput || !blogContentInput) {
-    const errorMessage = document.querySelector('#error');
-    errorMessage.textContent = 'All fields are required.';
+      // Validation
+      if (!username || !title || !content) {
+          errorElement.textContent = 'Please fill in all fields.';
+          return;
+      }
 
-    setTimeout(function () {
-      errorMessage.textContent = '';
-    }, 4000);
+      // Create blog post object
+      const post = {
+          username,
+          title,
+          content,
+      };
 
-    return;
-  }
+      // Save to localStorage
+      const posts = JSON.parse(localStorage.getItem('posts')) || [];
+      posts.push(post);
+      localStorage.setItem('posts', JSON.stringify(posts));
 
-  const blogData = {
-    username: userNameInput,
-    title: blogTitleInput,
-    content: blogContentInput,
-  };
-
-  saveToLocalStorage(blogData);
-  navigateToBlogPage();
-};
-
-const navigateToBlogPage = function () {
-  window.location.href = './blog.html';
-};
-
-const saveToLocalStorage = function (blogEntry) {
-  const existingBlogs = fetchFromLocalStorage();
-
-  existingBlogs.push(blogEntry);
-
-  const serializedData = JSON.stringify(existingBlogs);
-
-  localStorage.setItem('blogs', serializedData);
-};
-
-blogForm.addEventListener('submit', processFormSubmission);
+      // Redirect to posts page
+      window.location.href = 'blog.html';
+  });
+});
