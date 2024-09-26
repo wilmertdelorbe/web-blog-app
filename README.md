@@ -16,4 +16,4 @@ Web Blog App is a simple personal blog web application that allows users to subm
 ## Installation Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/web-blog-app.git
+   git clone https://github.com/wilmertdelorbe/web-blog-app
